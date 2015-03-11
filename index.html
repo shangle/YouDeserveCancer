@@ -6,45 +6,75 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
     <style media="screen">
+        html { 
+          background: url(rain.jpg) no-repeat center center fixed; 
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+            
         body {
-            overflow: hidden;
             min-height: 100%;
             margin: 0;
             padding: 0;
             font-family: 'Coming Soon', sans-serif;
         }
-
-        img {
+        h1 {
             width: 100%;
-            height: 100%;
+            color:  hsla(0,0%,0%,.8);
+            font-size: 5em;
+            text-shadow: 5px 5px 40px #aaa;
+            text-align: center;
+        }
+        .why {
+            background: white;
+            text-align: center;
+            font-family: sans-serif;
+            display: block;
+            width: 200px;
+            padding: 1em;
+            border-radius: .2em;
+            text-decoration: none;
+            color: #111;
+            margin: 10em auto;
+        }
+        audio {
+            
+            opacity: .25;
+            transition: opacity .25s ease-in-out;
+        }
+        audio:hover {
+            opacity: 1;
+        }
+        .credit {
+            position: fixed;
+            bottom: 5px;
+            right: 5px;
+            background: hsla(234, 8%, 39%, .5);
+            padding: 4px;
+            border-radius: 3px;
+            color: beige;
+        }
+        .credit a {
+            color: beige;
+            text-decoration: none;
+            transition: all .3s ease-in-out;
+        }
+        .credit a:hover {
+            box-shadow: inset 0px -2px 0px 0px beige;
         }
     </style>
     
-    <script src="//cdnjs.cloudflare.com/ajax/libs/rainyday.js/0.1.2/rainyday.min.js"></script>
-    <script>
-        function run() {
-            var image = document.getElementById('background');
-            image.onload = function() {
-                var engine = new RainyDay({
-                    image: this,
-                    blur: 0
-                });
-                engine.rain([ [1, 2, 8000] ]);
-                engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
-            };
-            image.crossOrigin = 'anonymous';
-            image.src = 'rain-compressor.jpg';
-        }
-    </script>
 </head>
-<body onload="run();">
+<body>
     <body>
-        <h1 style="position: fixed; top: 1em; width: 100%; text-align: center;">You Deserve Cancer.</h1>
-        <div id="credit" style="position: fixed; bottom: 5px; right: 5px;"><a href="https://unsplash.com/grzegorzmleczek">image</a> | <a href="http://www.freesound.org/people/Arctura/sounds/39827/">sound</a> | <a href="http://www.google.com/fonts/specimen/Coming+Soon">font</a> | <a href="http://maroslaw.github.io/rainyday.js/">rain</a> | &copy;2015</div>
-        <img id="background" alt="background" src="rain-compressor.jpg" />
         <audio src="rain.mp3" controls autoplay loop>
             <p>Your browser does not support the audio element </p>
         </audio>
+        <h1>You Deserve Cancer.</h1>
+        <div class="credit" style="position: fixed; bottom: 5px; right: 5px;">&copy;2015 | <a href="https://unsplash.com/grzegorzmleczek">image</a> | <a href="http://www.freesound.org/people/Arctura/sounds/39827/">sound</a> | <a href="http://www.google.com/fonts/specimen/Coming+Soon">font</a></div>
+        <a href="javascript:window.alert('You do NOT deserve cancer. No matter what you did, you do NOT deserve cancer.');" class="why">Tell me why.</a>
     </body>
 </body>
 </html>
