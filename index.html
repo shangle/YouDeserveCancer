@@ -1,53 +1,43 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <title>You Deserve Cancer</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/main.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <style media="screen">
+        body {
+            overflow: hidden;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-  </head>
-  <body>
-
-      <header>
-        <h1>You Deserve Cancer</h1>
-        <p></p>
-      </header>
-
-    <div class="wrapper">
-      <nav>
-        <ul></ul>
-      </nav>
-      <section>
-        <h3>
-<a id="you-deserve-cancer" class="anchor" href="#you-deserve-cancer" aria-hidden="true"><span class="octicon octicon-link"></span></a>You Deserve Cancer</h3>
-
-<hr>
-
-<p><strong>No</strong>, you don't deserve cancer. No one deserve cancer. It doesn't matter what you've done in your past, you do <strong>not</strong> deserve cancer.  </p>
-      </section>
-      <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-59920713-1");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/rainyday.js/0.1.2/rainyday.min.js"></script>
+    <script>
+        function run() {
+            var image = document.getElementById('background');
+            image.onload = function() {
+                var engine = new RainyDay({
+                    image: this
+                });
+                engine.rain([ [1, 2, 8000] ]);
+                engine.rain([ [3, 3, 0.88], [5, 5, 0.9], [6, 2, 1] ], 100);
+            };
+            image.crossOrigin = 'anonymous';
+            image.src = 'rain-compressor.jpg';
+        }
+    </script>
+</head>
+<body>
+    <body>
+        <img id="background" alt="background" src="rain-compressor.jpg" />
+    </body>
+</body>
 </html>
